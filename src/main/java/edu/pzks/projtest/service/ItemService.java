@@ -17,6 +17,9 @@ public class ItemService {
     }
 
     public Item create(Item item) {
+        if (item == null) {
+            throw new IllegalArgumentException("Item cannot be null");
+        }
         return itemRepository.save(item);
     }
 
